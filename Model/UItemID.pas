@@ -1,17 +1,18 @@
 unit UItemID;
 
 interface
+
 type
- ItemID = class
- constructor Create(id:integer);
+  TItemID = class
+  public
+    constructor Create(id: integer);
+  end;
 
- end;
 implementation
-
 
 { ItemID }
 
-constructor ItemID.Create(id: integer);
+constructor TItemID.Create(id: integer);
 begin
 
 end;

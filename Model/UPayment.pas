@@ -4,26 +4,31 @@ interface
 
 uses UMoney;
 
- type
- Payment = class
- private
- amount : Money;
- public
- procedure Payment(cashTendered:Money);
- function getAmount():Money;
- end;
+type
+  IPayment = interface
+    function getAmount(): IMoney;
+  end;
+
+  TPayment = class(TInterfacedObject, IPayment)
+  private
+    amount: IMoney;
+  public
+    constructor Create(cashTendered: IMoney);
+    function getAmount(): IMoney;
+  end;
+
 implementation
 
 { Payment }
 
-function Payment.getAmount: Money;
+function TPayment.getAmount: IMoney;
 begin
   result := amount;
 end;
 
-procedure Payment.Payment(cashTendered: Money);
+constructor TPayment.Create(cashTendered: IMoney);
 begin
- amount := cashTendered;
+  amount := cashTendered;
 end;
 
 end.

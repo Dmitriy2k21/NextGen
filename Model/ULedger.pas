@@ -1,10 +1,12 @@
 unit ULedger;
 
 interface
- type
- Ledger = class
 
- end;
+type
+  TLedger = class
+
+  end;
+
 implementation
 
 end.
